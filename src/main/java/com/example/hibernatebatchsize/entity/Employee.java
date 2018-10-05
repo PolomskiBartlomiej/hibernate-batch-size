@@ -24,9 +24,9 @@ public class Employee {
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn
     @BatchSize(size = 10)
-    Collection<Issue> issues;
+    Collection<Issue> batchIssues;
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn
-    Collection<Issue> issues2;
+    Collection<Issue> notBatchIssues;
 }

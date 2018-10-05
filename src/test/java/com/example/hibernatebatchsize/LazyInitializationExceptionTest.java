@@ -26,9 +26,9 @@ public class LazyInitializationExceptionTest {
         Employee employee2 = repository.findById(2).get();
         Employee employee3 = repository.findById(3).get();
         
-        employee1.getIssues().forEach(System.out::println);
-        employee2.getIssues().forEach(System.out::println);
-        employee3.getIssues().forEach(System.out::println);
+        employee1.getBatchIssues().forEach(System.out::println);
+        employee2.getBatchIssues().forEach(System.out::println);
+        employee3.getBatchIssues().forEach(System.out::println);
     }
 
     @Test
@@ -38,9 +38,9 @@ public class LazyInitializationExceptionTest {
         Employee employee2 = repository.findById(2).get();
         Employee employee3 = repository.findById(3).get();
 
-        employee1.getIssues2().forEach(System.out::println);
-        employee2.getIssues2().forEach(System.out::println);
-        employee3.getIssues2().forEach(System.out::println);
+        employee1.getNotBatchIssues().forEach(System.out::println);
+        employee2.getNotBatchIssues().forEach(System.out::println);
+        employee3.getNotBatchIssues().forEach(System.out::println);
     }
     
 }
