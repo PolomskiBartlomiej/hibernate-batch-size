@@ -10,9 +10,25 @@ so in case of (ex. `@OnToMany`) mapped collection of child entities
 (`size = N`) causes **N+1 query problem**.
 
 # solution
-Without `@BatchSize`, you’d run into a N+1 query issue, so, instead of 2 SQL 
-statements, there would be 10 queries needed for fetching the Employee 
-child entities.
+**`@BatchSize`** - Defines size for batch loading of collections or 
+lazy entities.
+```
+@Entity
+@BatchSize(size=100)
+class Product {
+    ...
+}
+```
+will initialize up to 100 lazy Product entity proxies at a time.
+
+```
+@OneToMany
+@BatchSize(size = 5) /
+Set getProducts() { ... };
+```
+will initialize up to 5 lazy collections of products at a time
+
+Without `@BatchSize`, you’d run into a N+1 query issue.
 
 However, although `@BatchSize` is better than running into an `N+1` query 
 issue, most of the time, a `DTO` projection or a `JOIN FETCH` is a much 
