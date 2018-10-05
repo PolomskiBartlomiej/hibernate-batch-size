@@ -29,7 +29,7 @@ with a single query.
         ...
     }
     ```
-will initialize up to 100 lazy Product entity proxies at a time.
+    will initialize up to 100 lazy Product entity proxies at a time.
 
 * over relation
     ```
