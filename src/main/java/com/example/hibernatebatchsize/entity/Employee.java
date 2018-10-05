@@ -20,8 +20,13 @@ import java.util.Collection;
 public class Employee {
     @Id
     Integer id;
+    
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn
     @BatchSize(size = 10)
     Collection<Issue> issues;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn
+    Collection<Issue> issues2;
 }

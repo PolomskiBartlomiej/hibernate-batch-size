@@ -21,7 +21,7 @@ public class LazyInitializationExceptionTest {
     
     @Test
     @Transactional
-    public void transactional() {
+    public void withBatch() {
         Employee employee1 = repository.findById(1).get();
         Employee employee2 = repository.findById(2).get();
         Employee employee3 = repository.findById(3).get();
@@ -29,6 +29,18 @@ public class LazyInitializationExceptionTest {
         employee1.getIssues().forEach(System.out::println);
         employee2.getIssues().forEach(System.out::println);
         employee3.getIssues().forEach(System.out::println);
+    }
+
+    @Test
+    @Transactional
+    public void withoutBatch() {
+        Employee employee1 = repository.findById(1).get();
+        Employee employee2 = repository.findById(2).get();
+        Employee employee3 = repository.findById(3).get();
+
+        employee1.getIssues2().forEach(System.out::println);
+        employee2.getIssues2().forEach(System.out::println);
+        employee3.getIssues2().forEach(System.out::println);
     }
     
 }
