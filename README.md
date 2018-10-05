@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.com/mtumilowicz/hibernate-batch-size.svg?branch=master)](https://travis-ci.com/mtumilowicz/hibernate-batch-size)
 
 # hibernate-batch-size
 The main goal of this project is to provide simple solution to 
